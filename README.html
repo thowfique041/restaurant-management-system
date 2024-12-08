@@ -1,20 +1,20 @@
-📜 1. Menu Initialization
+**📜 1. Menu Initialization**
 The menu is a list of dictionaries where each dictionary represents a menu item.
 Each item contains:
 name: The name of the food item (e.g., "Mozzarella Sticks").
 price: The price of the item (e.g., $6.99).
 This data stores the items that the user can order.
-🖥️ 2. Clearing the Console
+**🖥️ 2. Clearing the Console**
 The clear_console() function is designed to clear the console screen.
 It checks the operating system (Windows or Unix-based) and then uses the appropriate command:
 Windows: cls
 Linux/macOS: clear
 This helps in refreshing the interface to maintain a clean console view after every operation.
-📝 3. Displaying the Menu
+**📝 3. Displaying the Menu**
 The show_menu() function iterates through the menu list and prints each menu item in a formatted way.
 It shows each item’s index, name, and price on the console.
 Each item in the console output is also separated with a line ("-" * 30) for better readability.
-🔄 4. Main Ordering Loop
+**🔄 4. Main Ordering Loop**
 The loop runs continuously until the user chooses to finish the ordering process by entering the number 11.
 Key Steps in the Loop:
 User Input:
@@ -37,7 +37,7 @@ Screen Refresh:
 
 After each order, it refreshes the console screen using the clear_console() method.
 It then redisplays the updated menu with any new selections made.
-📝 5. Order Summary
+**📝 5. Order Summary**
 Once the loop ends, the console clears again to show a summary of ordered items.
 The order_list contains the names of the selected items.
 The prc variable stores the total cost of the orders.
