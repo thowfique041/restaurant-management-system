@@ -1,104 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Ordering System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .section {
-            margin: 20px;
-        }
-        .menu-item {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #eaeaea;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
+📜 1. Menu Initialization
+The menu is a list of dictionaries where each dictionary represents a menu item.
+Each item contains:
+name: The name of the food item (e.g., "Mozzarella Sticks").
+price: The price of the item (e.g., $6.99).
+This data stores the items that the user can order.
+🖥️ 2. Clearing the Console
+The clear_console() function is designed to clear the console screen.
+It checks the operating system (Windows or Unix-based) and then uses the appropriate command:
+Windows: cls
+Linux/macOS: clear
+This helps in refreshing the interface to maintain a clean console view after every operation.
+📝 3. Displaying the Menu
+The show_menu() function iterates through the menu list and prints each menu item in a formatted way.
+It shows each item’s index, name, and price on the console.
+Each item in the console output is also separated with a line ("-" * 30) for better readability.
+🔄 4. Main Ordering Loop
+The loop runs continuously until the user chooses to finish the ordering process by entering the number 11.
+Key Steps in the Loop:
+User Input:
 
-    <h1>🍽️ Restaurant Ordering System</h1>
+The input() function asks the user to enter a number representing the item they want to order.
+This input is then converted into an integer.
+Check if User Wants to Finish:
 
-    <!-- Project Overview Section -->
-    <div class="section">
-        <h2>📜 Project Overview</h2>
-        <p>This project is a simple console-based Python application that allows users to order items from a restaurant menu.</p>
-        <p>Key functionalities include:</p>
-        <ul>
-            <li>View the restaurant's menu</li>
-            <li>Order food and drinks by inputting item numbers</li>
-            <li>Get a summary of the order with the total cost</li>
-        </ul>
-    </div>
+If the user enters 11, the loop terminates, meaning the user is done ordering.
+Order Processing:
 
-    <!-- How to Run the Project Section -->
-    <div class="section">
-        <h2>🚀 How to Run the Project</h2>
-        <p>Follow these steps to run the project:</p>
-        <ol>
-            <li>Ensure Python is installed. Check with:</li>
-            <code>python --version</code>
-            <li>Clone the repository:</li>
-            <code>git clone https://github.com/thowfique041/restaurant-ordering-system.git</code>
-            <li>Navigate to the project folder:</li>
-            <code>cd restaurant-ordering-system</code>
-            <li>Run the script:</li>
-            <code>python your_script_name.py</code>
-        </ol>
-    </div>
+The code checks whether the entered number corresponds to a valid menu item (i.e., within the range of available indices).
+If valid:
+It adds the price of the item to the total price.
+It adds the name of the item to the order_list for tracking the ordered items.
+Invalid Input Handling:
 
-    <!-- Key Components Section -->
-    <div class="section">
-        <h2>📜 Code Description</h2>
-        <p><strong>Key Components:</strong></p>
-        <ul>
-            <li><strong>Menu List:</strong> A list of dictionaries representing the restaurant menu items.</li>
-            <li><strong>clear_console():</strong> Clears the console screen for a clean interface.</li>
-            <li><strong>show_menu():</strong> Displays the restaurant menu with item names and prices.</li>
-            <li><strong>Order Handling Loop:</strong> Continuously updates orders until the user finishes.</li>
-        </ul>
-    </div>
+If the user inputs a number outside the available menu range or an invalid value, it prints an error message and prompts the user to enter a correct item number.
+Screen Refresh:
 
-    <!-- Future Enhancements Section -->
-    <div class="section">
-        <h2>🔄 Future Enhancements</h2>
-        <p>Planned features to enhance the project:</p>
-        <ul>
-            <li>Graphical User Interface (GUI) integration using Tkinter</li>
-            <li>Database integration to manage order history</li>
-            <li>Payment gateway integration for online orders</li>
-            <li>Support for multiple users simultaneously</li>
-            <li>Discount codes and promotional offers</li>
-        </ul>
-    </div>
+After each order, it refreshes the console screen using the clear_console() method.
+It then redisplays the updated menu with any new selections made.
+📝 5. Order Summary
+Once the loop ends, the console clears again to show a summary of ordered items.
+The order_list contains the names of the selected items.
+The prc variable stores the total cost of the orders.
+Finally, it displays each item in the order_list and prints the total price.
+🔍 Key Concepts
+Data Storage:
 
-    <!-- Contact Information Section -->
-    <div class="section">
-        <h2>📫 Contact</h2>
-        <p>If you have any questions or suggestions, feel free to contact me:</p>
-        <p><strong>Email:</strong> thowfiqurbarrychowdhury@gmail.com </p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/thowfique041" target="_blank">https://github.com/thowfique041</a></p>
-    </div>
+The menu is stored as a list of dictionaries, which makes it easy to access items by their index.
+User Interaction:
 
-    <!-- Footer Section -->
-    <div class="footer">
-        <p>© 2024 Restaurant Ordering System. All rights reserved.</p>
-    </div>
+The code uses loops and input validation to interact with the user through the console interface.
+It ensures a user-friendly experience by refreshing the console screen after each order.
+Error Handling:
 
-</body>
-</html>
+The try-except block is implemented to handle invalid inputs gracefully, ensuring that the user can only interact with numeric values.
+✅ Overall Functionality
+This console-based system enables a restaurant ordering workflow where a user:
+
+Views available menu options.
+Selects desired items by entering corresponding numbers.
+Adds prices automatically and gets a clear breakdown of the order summary with a total cost.
